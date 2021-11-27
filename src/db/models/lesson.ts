@@ -1,15 +1,17 @@
-import { Model, DataTypes } from 'sequelize';
+import { Model, DataTypes, Optional } from 'sequelize';
 import sequelize from '../connection';
 
 interface ILessonAttributes {
   id: number;
-  number: string;
+  number: number;
   startTime: string;
   endTime: string;
 }
 
+type LessonCreationAttributes = Optional<ILessonAttributes, 'id'>;
+
 export interface ILessonInstance
-  extends Model<ILessonAttributes, ILessonAttributes>,
+  extends Model<ILessonAttributes, LessonCreationAttributes>,
     ILessonAttributes {}
 
 const LessonModel = sequelize.define<ILessonInstance>('Lesson', {

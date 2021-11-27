@@ -1,4 +1,4 @@
-import { Model, DataTypes } from 'sequelize';
+import { Model, DataTypes, Optional } from 'sequelize';
 import sequelize from '../connection';
 
 interface IDayOfWeekAttributes {
@@ -7,8 +7,10 @@ interface IDayOfWeekAttributes {
   name: string;
 }
 
+type DayOfWeekCreationAttributes = Optional<IDayOfWeekAttributes, 'id'>;
+
 export interface IDayOfWeekInstance
-  extends Model<IDayOfWeekAttributes, IDayOfWeekAttributes>,
+  extends Model<IDayOfWeekAttributes, DayOfWeekCreationAttributes>,
     IDayOfWeekAttributes {}
 
 const DayOfWeekModel = sequelize.define<IDayOfWeekInstance>('DayOfWeek', {
