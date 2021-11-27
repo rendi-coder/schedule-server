@@ -1,5 +1,4 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { TimeTableModel } from '.';
 import sequelize from '../connection';
 
 interface IClassRoomAttributes {

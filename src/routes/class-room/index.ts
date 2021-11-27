@@ -6,6 +6,7 @@ const classRoomRouter = express.Router();
 classRoomRouter.get('/', classRoomController.getClassRooms);
 classRoomRouter.get('/:id', classRoomController.getClassRoom);
 
+classRoomRouter.post('/initialize', classRoomController.createInitialClassRooms);
 classRoomRouter.post('/', classRoomController.createClassRoom);
 
 export default classRoomRouter;
