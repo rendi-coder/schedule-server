@@ -7,6 +7,7 @@ import {
   TeacherModel,
 } from '../../db/models';
 import TimeTableModel from '../../db/models/timetable';
+import TimeTableArticleModel from '../../db/models/timetable-article';
 import ApiError from '../../error/ApiError';
 
 interface ITimeTableCreationProps {
@@ -74,6 +75,10 @@ const SETTINGS = {
     {
       model: DisciplineModel,
       as: 'discipline',
+    },
+    {
+      model: TimeTableArticleModel,
+      as: 'articles',
     },
   ],
 };

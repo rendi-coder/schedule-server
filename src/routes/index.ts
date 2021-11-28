@@ -8,6 +8,7 @@ import dayOfWeek from './day-of-week';
 import lessonRouter from './lesson';
 import classRoomRouter from './class-room';
 import timeTableRouter from './timetable';
+import articleRouter from './article';
 
 const router = express.Router();
 
@@ -19,5 +20,6 @@ router.use('/dayOfWeek', dayOfWeek);
 router.use('/lesson', lessonRouter);
 router.use('/classRoom', classRoomRouter);
 router.use('/timeTable', timeTableRouter);
+router.use('/article', articleRouter);
 
 export default router;
